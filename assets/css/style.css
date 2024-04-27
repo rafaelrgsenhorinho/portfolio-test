@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('../fonts/NeueMachina-Regular.otf');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #fff;
+}
+
+main {
+    padding: 1rem;
+}
+
+.main::before, .main::after {
+    content: '';
+    background-image: url('../images/background.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 140vw;
+    height: 100vh;
+    z-index: -1;
+    
+}
+
+.main::after {
+    content: '';
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/dots.svg');
+}
+
+.header .photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.header .title {
+    text-align: center;
+    font-family: 'Neue Machina';
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.main {
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.125rem solid white;
+    border-radius: 1rem;
+    
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.information p {
+    margin: 0.5rem;
+}
+
+.information p::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+}
+
+.information .position::before {
+    background-image: url(../images/person.png);
+}
+
+.information .location::before {
+    background-image: url(../images/location.png);
+}
+.information .phone::before {
+    background-image: url(../images/tel.png);
+}
+.information .mail::before {
+    background-image: url(../images/mail.png);
+}
+
+/*ACORDEON*/
+
+.acordeon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    transform: 0.5s;
+}
+
+.acordeon.closed,
+.acordeon:hover {
+    background-color: #55569E;
+    border-color: #55569E;
+}
+
+.acordeon .trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+.acordeon .trigger h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    align-items: start;
+}
+
+.acordeon .trigger:hover {
+    cursor: pointer;
+}
+
+.acordeon .trigger::after {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../images/arrow.svg');
+    transition: 0.25s;
+}
+
+.acordeon.closed .trigger::after {
+    transform: rotate(180deg);
+}
+
+.acordeon .content {
+    overflow: hidden;
+    display: block;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+
+.acordeon.closed .content {
+    display: block;
+    padding: 0 1rem 1rem 2rem;
+    height: auto;
+    opacity: 1;
+    
+}
+
+/*SKILLS*/
+
+.skills {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.skills .tools ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skills .tools ul img{
+    max-width: 50px;
+    margin: 0.5rem;
+}
+
+.skills .personal ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.skills .personal ul li {
+    margin-left: 2rem;
+    padding: 0.5rem;
+}
+
+
+/*LANGUAGES*/
+
+.languages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.languages li {
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.languages li::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../images/check.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5rem;
+    
+}
+
+/*Portfolio*/
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+.portfolio li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1rem 0;
+
+}
+
+.portfolio li .portfolio-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio li .portfolio-title.github::before  {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../images/github.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5rem;
+}
+
+.portfolio li a {
+    text-decoration: none;
+}
+
+.portfolio li a:hover {
+    text-decoration: underline;
+}
+
+/*EXPERIENCE*/
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience li {
+    margin-bottom: 1rem;
+}
+
+.experience li .period {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.experience li .period::before  {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../images/date.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5rem;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width:768px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information";
+        justify-content: space-evenly;
+    }
+
+    .header .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .title {
+        grid-area: title;
+        text-align: start;
+        max-width: 220px;
+    }
+
+    .header .information {
+        grid-area: information;
+    }
+
+    .main {
+        max-width: 1024px;
+        margin: 1rem auto;
+
+    }
+
+    .main::before, .main::after  {
+        width: 70vw;
+    }
+
+
+    .skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+
+}
